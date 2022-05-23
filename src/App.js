@@ -1,14 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import "./App.css"
+import TaskApp from "./components/TaskApp"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-         <h1>Hello Friend</h1>
-      </header>
-    </div>
-  );
+    <div className="Header">
+      <TaskApp />
+    </div>);
 }
 
 export default App;
