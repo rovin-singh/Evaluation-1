@@ -8,16 +8,18 @@ const TaskApp = () => {
   // NOTE: do not delete `data-cy` key value pair
   const [task,setTask]=React.useState("");
   const [dataArr,setData]=React.useState([])
+  const [totalTask,settotalTask]=React.useState(0)
+  const [unCompletedTask,setunCompletedTask]=React.useState(0)
   const addTask=()=>{
-    setData([...dataArr,task])
+    setData([...dataArr,task]);
     setTask("");
-    console.log(dataArr)
+    settotalTask(dataArr.length+1);
   }
   return (
     <div data-cy="task-app" className={styles.taskApp}>
-      <TaskHeader />
-      <AddTask  task={task} setTask={setTask} addTask={addTask}/>
-      <Tasks />
+      <TaskHeader totalTask={totalTask} unCompletedTask={unCompletedTask} />
+      <AddTask  task={task} setTask={setTask} addTask={addTask} />
+      <Tasks  dataArr={dataArr} />
     </div>
   );
 };
